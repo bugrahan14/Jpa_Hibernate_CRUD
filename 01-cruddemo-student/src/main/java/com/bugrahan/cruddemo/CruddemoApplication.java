@@ -38,7 +38,7 @@ public class CruddemoApplication {
 	}
 
 	private void deleteAllStudents(StudentDAO studentDAO) {
-		// TÜM SINIFI SİLER
+		// DELETES ENTIRE CLASS
 
 		System.out.println("SINIFTAKİ TÜM ÖĞRENCİLER SİLİNİYOR");
 		int numRowsDeleted =studentDAO.deleteAll();
@@ -46,7 +46,7 @@ public class CruddemoApplication {
 	}
 
 	private void deleteStudent(StudentDAO studentDAO) {
-		// BURADA İD GİRİLEN ÖĞRENCİ SİLİNMEKTEDİR
+		// STUDENT ID ENTERED HERE IS DELETED
 		int studentİD = 3 ;
 		System.out.println("SİLİNECEK ÖĞRENCİNİN İD Sİ = "+ studentİD);
 		studentDAO.delete(studentİD);
@@ -73,7 +73,7 @@ public class CruddemoApplication {
 
 	private void queryForStudentsByLastName(StudentDAO studentDAO) {
 
-		// BU FONKSİYON SOYADI DUCK OLANI DİSPLAY EDER
+		// THIS FUNCTION DISPLAYS THE ONE WHOSE SURNAME IS "DUCK"
 		// GET A LİST OF STUDENTS
 		List<Student> theStudents = studentDAO.findByLastName("Duck");
 
@@ -86,13 +86,13 @@ public class CruddemoApplication {
 
 	private void queryForStudents(StudentDAO studentDAO) {
 
-		// BU METOD BİZİM DATABASE DEKİ VERİLEİRİN TAMAMINI DİSPLAY ETMEMİZİ SAĞLAR
+		// THIS METHOD ALLOWS US TO DISPLAY ALL THE DATA IN THE DATABASE.
 
 		//GET A LİST FOR STUDENTS
 		List<Student> tempStudents =studentDAO.findAll();
 
-		// DİSPLAY LİST OF STUDENT
-		//System.out.println("ÖĞRENCİLERİN LİSTESİ"+tempStudents); TO STRİNG METODUMUZ OLDUĞU İÇİN DOĞRU BİR ŞEKİLDE ÇALIŞTI
+		// DISPLAY LİST OF STUDENT
+		// System.out.println("LIST OF STUDENTS"+tempStudents); IT WORKED CORRECTLY BECAUSE WE HAVE TO STRING METHOD
 		for(int i = 0 ; i<tempStudents.size(); i++){
 			System.out.println(tempStudents.get(i));
 		}
@@ -102,7 +102,7 @@ public class CruddemoApplication {
 
 	private void readStudent(StudentDAO studentDAO) {
 
-		// BU METOD HEM KAYIT HEM DİSPLAY EDER
+		// THIS METHOD BOTH RECORD AND DISPLAY
 
 		//CREAT NEW STUDENT OBJECT
 		System.out.println("CREATİNG NEW STUDENT OBJECT");
